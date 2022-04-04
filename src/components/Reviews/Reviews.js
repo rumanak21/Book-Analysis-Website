@@ -7,8 +7,7 @@ const Reviews = () => {
     const [reviews, setReviews] = useReviews();
     
     return (
-        <div>
-            <h2>Total Review: {reviews.length}</h2>
+        <div className='grid grid-cols-3 m-20'>
             {reviews.map(review => <CustomerReviewsAll key ={review.id} review={review}></CustomerReviewsAll>)}
         </div>
     );
