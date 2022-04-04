@@ -67,7 +67,7 @@ const DashBoard = (props) => {
 
 
 
-            <div className='mx-20 ' style={{ width: '100%', height: 200 }}>
+            <div className='mx-20 ' style={{ width: '90%', height: 200 }}>
                 <ResponsiveContainer>
                     <AreaChart
                         data={data}
