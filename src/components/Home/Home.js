@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import useReviews from '../../hooks/useReviews';
 import CustomerReviews from '../CustomerReviews/CustomerReviews';
 
@@ -7,6 +8,10 @@ const Home = () => {
     const [reviews, setReviews] = useReviews();
 
     const threeReview = reviews.slice(0, 3);
+    let navigate = useNavigate();
+    const seeAllReviews = () => {
+        navigate(`/reviews`)
+    }
 
     return (
         <div>
@@ -23,7 +28,7 @@ const Home = () => {
                 {threeReview.map(review => < CustomerReviews key={review.id} review={review} ></CustomerReviews>)}
             </div>
 
-            <button  className='m-2 py-1 px-20 bg-sky-500 text-white font-semibold rounded-lg shadow-md hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75'>See All Reviews</button>
+            <button onClick={seeAllReviews} className='m-2 py-1 px-20 bg-sky-500 text-white font-semibold rounded-lg shadow-md hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75'>See All Reviews</button>
         </div >
     );
 };
